@@ -2,3 +2,7 @@
 <li>
   <%= render @shouts %>
 </li>
+
+<div>
+  <%= button_to "Follow #{@user.email}", [@user, :following_relationship] %>
+ </div>
