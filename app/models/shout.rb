@@ -1,3 +1,3 @@
 class Shout < ActiveRecord::Base
-  has_many :shouts
+  belongs_to :user
 end
