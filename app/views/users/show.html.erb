@@ -1,8 +1,6 @@
 <%= @user.email %>
-<li>
-  <%= render @shouts %>
-</li>
+<%= render "follow_button", user: @user %>
 
-<div>
-  <%= button_to "Follow #{@user.email}", [@user, :following_relationship] %>
- </div>
+<ul>
+  <%= render @shouts %>
+</ul>

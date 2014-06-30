@@ -8,7 +8,7 @@ class ShoutsController < ApplicationController
 
   def shout_params
     params.require(:shout).
-      permiti(
+      permit(
         :body,)
   end
 end

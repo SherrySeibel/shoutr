@@ -1,6 +1,11 @@
-<%= link_to current_user.email, current_user %>
+<div>
+    <%= link_to current_user.email, current_user %>
+    <ul>
+      <li><%= link_to "Following", :following %></li>
+    </ul>
+  </div>
 
-<%= form_for @shout do |form| %>
-  <%= form.text_area :body, placeholder: "Shout something!" %>
-  <%= form.submit "Shout" %>
-<% end %>
+  <%= form_for @shout do |form| %>
+      <%= form.text_area :body, placeholder: "Shout something!" %>
+    <%= form.submit "Shout" %>
+  <% end %>
