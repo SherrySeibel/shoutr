@@ -1,6 +1,6 @@
 class ShoutsController < ApplicationController
   def create
-    current_user.shouts.create(shout_params)
+    @shout = current_user.shouts.create(shout_params)
     redirect_to :dashboard
   end
 

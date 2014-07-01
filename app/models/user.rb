@@ -1,5 +1,10 @@
 class User < ActiveRecord::Base
+  has_many :text_subjects
+
   has_many :shouts
+
+  has_many :text_subjects,
+    through: :shouts
 
   has_many :followed_user_relationships,
     class_name: "FollowingRelationship",
