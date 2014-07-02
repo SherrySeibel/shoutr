@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
 
   end
-
   root to: "sessions#new"
+
+  get "/:id", to: "users#show"
 end
