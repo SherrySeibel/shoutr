@@ -31,4 +31,10 @@ class User < ActiveRecord::Base
   def following?(other_user)
     followed_user_ids.include?(other_user.id)
   end
+
+  def timeline
+    followed_users_feed = followed_users
+    shouts_feed = Shout.where(user_id: followed_users_feed)
+    shouts_feed.order("created_at desc")
+  end
 end
