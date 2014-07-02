@@ -6,8 +6,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by!(name: params[:id])
-    @shouts = @user.shouts.order("created_at desc")
+    @user = User.find_by!(username: params[:username])
+    @shouts = @user.shouts.order("created_at desc").page params[:page]
   end
 
   def create
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       permit(
         :email,
         :password,
-        :name,
+        :username,
     )
   end
 end

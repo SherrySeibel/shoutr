@@ -20,5 +20,5 @@ Rails.application.routes.draw do
   end
   root to: "sessions#new"
 
-  get "/:name", to: "users#show", as: :user
+  get "/:username", to: "users#show", as: :user
 end
