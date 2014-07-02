@@ -33,6 +33,6 @@ class User < ActiveRecord::Base
   end
 
   def timeline
-    Shout.where(user_id: followed_users_feed).order("created_at desc")
+    Shout.where(user_id: followed_users).order("created_at desc")
   end
 end

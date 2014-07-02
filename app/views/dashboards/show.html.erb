@@ -9,7 +9,13 @@
 
 <%= form_for @text_subject do |form| %>
   <%= form.text_area :body, placeholder: "Shout something!" %>
-<%= form.submit "Shout" %>
-  <% end %>
+  <%= form.submit "Shout" %>
+<% end %>
+
+<%= form_for @image_subject do |form| %>
+  <%= form.label "Picture URL" %>
+  <%= form.text_field :url %>
+  <%= form.submit "Shout" %>
+<% end %>
 
 <%= render @shouts_feed %>
