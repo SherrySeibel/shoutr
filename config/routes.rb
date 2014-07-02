@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :shouts, only: [:create]
   resources :text_subjects, only: [:create]
   resources :image_subjects, only: [:create]
-
+  resource :search, only: [:show]
   get "/sign_up", to: "users#new"
 
   constraints Monban::Constraints::SignedIn.new do
@@ -20,5 +20,5 @@ Rails.application.routes.draw do
   end
   root to: "sessions#new"
 
-  get "/:id", to: "users#show", as: :user
+  get "/:name", to: "users#show", as: :user
 end
