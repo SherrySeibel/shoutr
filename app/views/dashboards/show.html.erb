@@ -1,6 +1,12 @@
 <h1>Shoutr</h1>
 <div>
   <%= link_to current_user.name, current_user %>
+
+  <%= form_tag "/search", method: "get" do %>
+    <%= label_tag :query, "Search for user..." %>
+    <%= text_field_tag :query %>
+    <%= submit_tag "Search" %>
+  <% end %>
   <ul>
     <li><%= link_to "Followers" %></li>
     <li><%= link_to "Following", :following %></li>
