@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by(name: params[:id])
     @shouts = @user.shouts.order("created_at desc")
   end
 

@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+
+  # extend FriendlyId
+  # friendly_id :name
+
   has_many :text_subjects
 
   has_many :shouts
@@ -34,5 +38,9 @@ class User < ActiveRecord::Base
 
   def timeline
     Shout.where(user_id: followed_users).order("created_at desc")
+  end
+
+  def to_param
+    name.parameterize
   end
 end
