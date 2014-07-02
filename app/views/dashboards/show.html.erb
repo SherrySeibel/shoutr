@@ -8,13 +8,12 @@
 </div>
 
 <%= form_for @text_subject do |form| %>
-  <%= form.text_area :body, placeholder: "Shout something!" %>
+  <%= form.text_area :body, placeholder: "Shout some words!" %>
   <%= form.submit "Shout" %>
 <% end %>
 
 <%= form_for @image_subject do |form| %>
-  <%= form.label "Picture URL" %>
-  <%= form.text_field :url %>
+  <%= form.text_field :url, placeholder: "Shout image URL:" %>
   <%= form.submit "Shout" %>
 <% end %>
 
