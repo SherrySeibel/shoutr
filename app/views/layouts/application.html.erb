@@ -4,7 +4,7 @@
   <title>Shoutr</title>
 
   <% if signed_in? %>
-    <p>Signed in as: <%= current_user.name %> 
+    <p>Signed in as: <%= current_user.username %> 
   <%= link_to "Sign out", :session, method: :delete %></p>
   <% else %>
     <%= link_to "Sign in", root_path %>

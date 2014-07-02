@@ -41,6 +41,6 @@ class User < ActiveRecord::Base
   end
 
   def to_param
-    name.parameterize
+    username.parameterize
   end
 end
