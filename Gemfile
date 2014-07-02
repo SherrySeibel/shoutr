@@ -12,3 +12,4 @@ gem 'spring',        group: :development
 gem 'monban'
 gem 'monban-generators'
 gem "paperclip", "~> 4.1"
+gem "friendly_id", "~> 4.0.0.beta8"
