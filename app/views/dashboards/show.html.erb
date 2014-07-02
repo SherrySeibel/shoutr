@@ -1,7 +1,7 @@
 <div>
   <%= link_to current_user.email, current_user %>
   <ul>
-    <li><%= link_to "Who you're following", :followers %></li>
+    <li><%= link_to "Followers" %></li>
     <li><%= link_to "Following", :following %></li>
   </ul>
 </div>
@@ -10,3 +10,5 @@
   <%= form.text_area :body, placeholder: "Shout something!" %>
 <%= form.submit "Shout" %>
   <% end %>
+
+<%= render @followed_users %>
