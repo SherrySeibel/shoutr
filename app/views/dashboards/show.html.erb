@@ -1,6 +1,6 @@
 <h1>Shoutr</h1>
+
 <div>
-  <%= paginate @shouts_feed %>
   <%= link_to current_user.username, current_user %>
 
   <%= form_tag "/search", method: "get" do %>
@@ -8,8 +8,9 @@
     <%= text_field_tag :query %>
     <%= submit_tag "Search" %>
   <% end %>
+
   <ul>
-    <li><%= link_to "Followers" %></li>
+    <li><%= link_to "Followers", :followers %></li>
     <li><%= link_to "Following", :following %></li>
   </ul>
 </div>
@@ -24,4 +25,8 @@
   <%= form.submit "Shout" %>
 <% end %>
 
-<%= render @shouts_feed %>
+<ul>
+  <%= render @timeline %>
+</ul>
+
+<%= paginate @timeline %>

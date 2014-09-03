@@ -2,7 +2,8 @@ class FollowingRelationship < ActiveRecord::Base
   belongs_to :follower, class_name: "User"
   belongs_to :followed_user, class_name: "User"
 
-  validate :user_is_not_following_themselves # validate as a singular word is how you do custom validations. 
+  validate :user_is_not_following_themselves
+
   private
 
   def user_is_not_following_themselves
