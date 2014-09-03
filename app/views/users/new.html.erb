@@ -1,5 +1,9 @@
 <%= form_for @user do |form| %>
   <div>
+    <%= render "errors", target: @user %>
+  </div>
+
+  <div>
     <%= form.label :username %>
     <%= form.text_field :username %>
   </div>
