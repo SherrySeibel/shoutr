@@ -1,7 +1,9 @@
 <div>
-<%= @user.email %>
+  <%= @user.username %>
   <%= render "follow_button", user: @user %>
+
   <ul>
     <%= render @shouts %>
   </ul>
+  <%= paginate @shouts %>
 </div>
