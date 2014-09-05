@@ -1,7 +1,5 @@
 class User < ActiveRecord::Base
-
-  # extend FriendlyId
-  # friendly_id :name
+  validates :username, uniqueness: true, presence: true
 
   has_many :text_subjects
 
@@ -41,6 +39,6 @@ class User < ActiveRecord::Base
   end
 
   def to_param
-    username.parameterize
+    username
   end
 end
